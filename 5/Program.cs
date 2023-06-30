@@ -75,14 +75,14 @@
 // }
 
 
-// void FindNegSum (int[] array)
+// void FindOddPositionSum(int[] array)
 // {
-//     int negSum = 0;
+//     int oddPosSum = 0;
 //     for (int i = 0; i < array.Length; i++)
 //     {
-//         if (array[i]<0) negSum += array[i];
+//         if (i % 2 != 0) oddPosSum += array[i];
 //     }
-// System.Console.WriteLine($"Сумма отрицательных чисел -> {negSum}");
+//     System.Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях -> {oddPosSum}");
 // }
 
 // System.Console.WriteLine("Введите размер массива -> ");
@@ -95,41 +95,48 @@
 // int[] myArray = CreateRandomArray(size, minV, maxV);
 // PrintRandom(myArray);
 // System.Console.WriteLine();
-// FindNegSum(myArray);
+// FindOddPositionSum(myArray);
 
-// Задача 38: 
-// Задайте массив вещественных чисел. 
-// Найдите разницу между максимальным и минимальным элементов массива.
-// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+// // Задача 38: 
+// // Задайте массив вещественных чисел. 
+// // Найдите разницу между максимальным и минимальным элементов массива.
+// // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 
-double[] CreateRandomArray(int size, double minV, double maxV)
-{
-    double[] array = new double[size];
-    for (int i = 0; i < size; i++)
-    {
-        double one = new Random().Next(minV, maxV + 1);
-        double two = new Random().NextDouble;
-        double sum = one + two;
-        array[i] = sum;
-    }
-    return array;
-}
+// double[] CreateRandomArray()
+// {
+//     double[] array = new double[5];
+//     Random rand = new Random();
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = Math.Round ((rand.Next(1, 100) + rand.NextDouble()),2);
+//     }
+//     return array;
+// }
 
-void PrintRandom(double[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.Write(array[i] + " ");
-    }
-}
+// void PrintRandom(double[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         System.Console.Write(array[i] + " | ");
+//     }
+// }
 
-System.Console.WriteLine("Введите размер массива -> ");
-int size = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Введите минимальное число массива -> ");
-double minV = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Введите максимальное число массива -> ");
-double maxV = Convert.ToInt32(Console.ReadLine());
+// void DiffMaxMin (double[] array)
+// {
+//     double max = 0;
+//     double min = 100 ;
+//     double diff = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if(array[i]> max) max = array[i];
+//         if(array[i]< min) min = array[i];
+//     }
+//     diff = max - min;
+//     System.Console.WriteLine($"разница между максимальным {max} и минимальным {min} элементом массива -> {diff}");
+// }
 
-double[] myArray = CreateRandomArray(size, minV, maxV);
-PrintRandom(myArray);
-System.Console.WriteLine();
+
+// double[] myArray = CreateRandomArray();
+// PrintRandom(myArray);
+// System.Console.WriteLine();
+// DiffMaxMin(myArray);
