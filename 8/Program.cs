@@ -206,51 +206,101 @@
 // Print3DArray(Create3DArray(3,3,3,10,99));
 
 
-// Задача 62. 
-// Напишите программу, которая заполнит спирально массив 4 на 4.
+// // Задача 62. 
+// // Напишите программу, которая заполнит спирально массив 4 на 4.
 
-
-// int[,] SpiralMatx()
+// void Print2DSpiralArray(int[,] array)
 // {
-//     int[,] spiral = new int[4, 4];
-//     int m = 1;
-//     int i = 0;
-//     int j = 0;
-//     while (m <= 16)
-//         if (m <= 4)
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
 //         {
-//             spiral[i, j] = m;
-//             j++;
-//             m++;
-//         }
-//         else
-//         {
-//             if (m<=7)
+//             if (array[i, j] <= 9)
 //             {
-//                 spiral[i, j] = m;
-//                 i++;
-//                 m++;
+//                 System.Console.Write($"0{array[i, j]} ");
 //             }
 //             else
 //             {
-//                 if (m<=10)
+//                 System.Console.Write(array[i, j] + " ");
+
+//             }
+
+//         }
+//         System.Console.WriteLine();
+//     }
+//     System.Console.WriteLine();
+// }
+
+
+// int[,] Fill2DSpiralArray()
+// {
+//     int[,] array = new int[4, 4];
+//     int i = 0;
+//     int j = -1;
+//     int m = 1;
+//     while (m <= 16)
+//     {
+//         if (m<= 4)
+//         {
+//             j++;
+//             array[i, j] = m;
+//             m++;
+
+//         }
+//         else
+//         {
+//             if (m <= 7)
+//             {
+//                 i++;
+//                 array[i, j] = m;
+//                 m++;
+
+//             }
+//             else 
+//             {
+//                 if(m <= 10)
 //                 {
-//                     spiral[i,j] = m;
 //                     j--;
+//                     array[i,j] = m;
 //                     m++;
 //                 }
-//                 else
+//                 else 
 //                 {
-//                     if (spiral[i,j] == 0)
+//                     if (m <= 12)
 //                     {
-//                         spiral[i,j] = m;
 //                         i--;
+//                         array[i,j] = m;
 //                         m++;
+//                     }
+//                     else 
+//                     {
+//                         if (m <= 14)
+//                         {
+//                             j++;
+//                             array[i,j] = m;
+//                             m++;
+//                         }
+//                         else 
+//                         {
+//                             if (m<=15)
+//                             {
+//                                 i++;
+//                                 array[i,j] = m;
+//                                 m++;
+//                             }
+//                             else
+//                             {
+//                                j--;
+//                                array[i,j] = m;
+//                                m++;
+//                             }
+//                         }
 //                     }
 //                 }
 //             }
 //         }
-//     return spiral;
-// }
+//     }
+//         return array;
+//     }
 
-// Print2DArray(SpiralMatx());
+//     Print2DSpiralArray(Fill2DSpiralArray());
